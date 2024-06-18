@@ -6,7 +6,7 @@ from statsmodels.tsa.stattools import kpss
 from statsmodels.tsa.stattools import adfuller
 
 #### Courbe pour stats ######
-def courbe_Lorentz(plt_ax,df,colonne,titre="",titreX="",titreY=""):
+def courbe_Lorentz(plt_ax,df,colonne,titre="",titreX="",titreY="",label=""):
     """configure une courbe de Lorentz sur l'axe matplotlib
     Args:
         plt_ax : Axe Matplotlib as matplotlib.axes_subplots.AxesSubplot
@@ -36,7 +36,7 @@ def courbe_Lorentz(plt_ax,df,colonne,titre="",titreX="",titreY=""):
 
     # creation d'une courbe de Lorentz
     #sns.lineplot(data =data_lorentz, x='pourcentage index', y='pourcentage Y cumulé',ax=plt_ax)
-    plt_ax.plot(data_lorentz['pourcentage index'],data_lorentz['pourcentage Y cumulé'])
+    plt_ax.plot(data_lorentz['pourcentage index'],data_lorentz['pourcentage Y cumulé'],label=label)
 
     #courbe de lorentz avec repartition ideale
     plt_ax.plot([100, 0],[100,0])
